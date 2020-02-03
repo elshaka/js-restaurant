@@ -1,0 +1,90 @@
+body {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/shawarma.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin active-background {
+  background: rgba(0,0,0,0.7);
+}
+
+@mixin inactive-background {
+  background: rgba(0,0,0,0.3);
+}
+
+$tab-radius-size: 15px;
+
+/* Menu */
+nav {
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px black;
+  margin-top: 30px;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .tab {
+      padding: 20px;
+      display: inline-block;
+      border-bottom: none;
+      border-radius: $tab-radius-size $tab-radius-size 0 0;
+      @include inactive-background;
+
+      a{
+        text-transform: capitalize;
+        cursor: pointer;
+
+        :hover {
+          color: red;
+        };
+      }
+    }
+
+    .active {
+      @include active-background;
+    }
+  }
+}
+
+#logo {
+  width: 300px;
+}
+
+.content {
+  width: 100%;
+  max-width: 768px;
+  height: 400px;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  background: rgba(0,0,0,0.7);
+  border-radius: $tab-radius-size;
+}
+
+.content div {
+  text-align: center;
+  padding: 20px;
+}
+
+.content h2 {
+  padding: 20px 0;
+  font-family: 'Baloo Bhaijaan';
+  font-size: 25px;
+}
+
+.content p {
+  font-size: 20px;
+  line-height: 25px;
+  padding-top: 10px;
+}

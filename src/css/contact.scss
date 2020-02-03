@@ -1,0 +1,39 @@
+@mixin common {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    margin: 5px;
+  }
+
+  input {
+    @include common;
+    width: 250px;
+    margin: 10px;
+    border: none;
+    padding: 10px;
+  }
+
+  textarea {
+    width: 250px;
+    height: 100px;
+    @include common;
+    margin: 10px;
+  }
+
+  button {
+    @include common;
+    width: 100px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background: #a81612;
+  }
+}
